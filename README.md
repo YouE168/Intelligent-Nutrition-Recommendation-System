@@ -36,5 +36,24 @@ Using nutrient composition data, it identifies similar food items and delivers p
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/<your-username>/nutrition-recommendation-system.git
-cd nutrition-recommendation-system
+git clone [https://github.com/VarunHarinath/nutrition-recommendation-system.git](https://github.com/VarunHarinath/Intelligent-Nutrition-Recommendation-System)
+cd intelligent-nutrition-recommendation-system
+```
+
+
+### 2️⃣ Backend Setup (FastAPI)
+```bash
+cd server
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
+
+### 3️⃣ Frontend Setup (React)
+```bash
+cd client
+npm install
+npm start
+```
+
+
+
