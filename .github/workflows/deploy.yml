@@ -19,12 +19,12 @@ jobs:
 
             - name: Copy Docker files to EC2 
               run: | 
-                    scp -o StricHostKeyChecking=no -i ec2_key.pem -r ./server ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_IP }}:~/server
+                    scp -o StricHostKeyChecking=no -i ec2_key.pem -r ./Server ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_IP }}:~/server
                 
             - name: Connect and deploy
               run: |
                     ssh -o StrictHostKeyChecking=no -i ec2_key.pem ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_IP }} << 'EOF'
-                    cd ~/server
+                    cd ~/Server
                     docker build -t service.dev -f Dockerfile.dev .
                     docker stop service.dev || true
                     docker rm service.dev || true
