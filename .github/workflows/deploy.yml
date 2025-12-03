@@ -27,7 +27,7 @@ jobs:
             - name: Build Docker Image
               run: |
                     IMAGE_URI=${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/inrt/server:latest
-                    docker build -t inrt_server -f ./server/Dockerfile.dev ./server
+                    docker build -t inrt_server -f ./Server/Dockerfile.dev ./Server
                     docker tag inrt_server $IMAGE_URI
 
             - name: Push Docker image to ECR
